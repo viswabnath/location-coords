@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="primary">
+    <ion-title  style="text-align: center; text-transform: uppercase;">
+      Location
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<ion-content padding class="auth-page">
+  <ion-label  style="text-align: center;">
+    <button class="round" ion-button color="primary" outline (click)="getLoc()">Get Location</button>
+  </ion-label>
+  <ion-item *ngIf="location!=false" class="item">
+    <ion-icon  name="pin" item-start></ion-icon>
+    <h5 class="active">Latitude : {{lat}}</h5>
+   <h5 class="active"> Longitude : {{lng}} </h5>
+  </ion-item>
+ 
 </ion-content>
